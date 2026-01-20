@@ -1,0 +1,822 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&family=Forum&family=Poiret+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tenor+Sans&family=Train+One&family=Viaoda+Libre&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Forum", sans-serif;
+    font-weight: 400;
+    color: aliceblue;
+    font-size: 16px;
+    background: black;
+}
+
+a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
+img {
+    max-width: 100%;
+}
+
+.wrapper {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(26, 14, 1, 1) 100%
+    );
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+}
+
+header {
+    padding: 50px 20px;
+}
+
+header .logo,
+footer .blocks .logo {
+    text-transform: uppercase;
+    font-size: 29px;
+    font-weight: 800;
+}
+
+header nav {
+    float: right;
+    width: 50%;
+}
+
+header nav ul {
+    z-index: 2;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+header nav ul li {
+    display: inline-block;
+}
+
+header nav ul li a {
+    color: aliceblue;
+}
+
+header nav ul li:not(.active):not(.btn) a:hover {
+    border-bottom: 5px solid #dc7000;
+}
+
+header nav ul li.btn a,
+.email .block button {
+    background: #fa9021;
+    padding: 9px 17px;
+    border-radius: 5px;
+    transition: all 500ms ease;
+}
+
+header nav ul li.btn a:hover,
+.email .block button:hover {
+    background: #5c360e;
+}
+
+header nav ul li.active::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 5px;
+    background: #dc7000;
+    border-radius: 10px;
+    margin: 7px auto 0 auto; /* сверху — отступ, снизу — авто */
+}
+
+.hero {
+    padding-bottom: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero--info {
+    width: 530px;
+    padding-top: 70px;
+}
+
+.hero--info h2 {
+    color: #a55908;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.hero--info h1 {
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.hero--info p {
+    font-weight: 500;
+    line-height: 170%;
+    margin: 30px 0;
+}
+
+.hero--info .btn,
+.hero-about .info .btn {
+    background: #fa9021;
+    color: aliceblue;
+    border-radius: 50px;
+    padding: 15px 30px;
+    border: 0;
+    transition: all 500ms ease;
+    font-size: 17px;
+}
+
+.hero--info .btn:hover,
+.hero-about .info .btn:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.hero-about img {
+    position: relative;
+    width: 960px;
+    height: 600px;
+}
+
+.hero img {
+    position: absolute;
+    top: -150px;
+    right: 64px;
+    z-index: -1000;
+}
+
+/* Секция с играми */
+.trending {
+    padding-top: 50px;
+    z-index: 3;
+    position: relative;
+}
+
+.trending h3 {
+    font-weight: 600;
+    font-size: 31px;
+}
+
+.trending .see-all,
+.projects .see-all {
+    color: aliceblue;
+    background: #25211d;
+    border-radius: 5px;
+    padding: 12px 23px;
+    float: right;
+    display: block;
+    transition: all 600ms ease;
+}
+
+.projects .see-all {
+    float: none;
+    width: 70px;
+    text-align: center;
+}
+
+.trending .see-all:hover,
+.projects .see-all:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* сами игры */
+
+.trending .games {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    width: 100%;
+    padding: 50px 0;
+}
+.trending .games img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 30px;
+}
+.trending .games span img {
+    position: relative;
+    top: 5px;
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.trending .games span {
+    display: block;
+    text-align: center;
+}
+
+.big-text {
+    padding: 50px 0;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    width: 800px;
+}
+
+.banner {
+    padding: 80px 0;
+}
+
+.banner h3 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+.banner p {
+    line-height: 170%;
+    margin-bottom: 30px;
+    width: 550px;
+}
+
+.banner img {
+    width: 120%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: all 400ms ease;
+}
+
+.banner img:hover {
+    cursor: pointer;
+    transform: scale(0.8);
+}
+
+/* блок с картинкой на фоне */
+
+.info .block img:first-child {
+    width: 40px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.info .block img:last-child {
+    width: 18.5px;
+    height: 25px;
+    border-radius: 10px;
+}
+
+.features {
+    background: linear-gradient(black, rgb(99, 46, 4));
+    padding: 80px;
+}
+
+.features h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features p {
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.features .info {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.features .info .block {
+    text-align: center;
+    width: 20%;
+    margin: 30px 2%;
+}
+
+.features img {
+    margin-bottom: 15px;
+}
+
+.projects {
+    padding: 100px 0;
+}
+
+.projects h3 {
+    font-size: 30px;
+    text-align: center;
+}
+
+.projects p {
+    margin: 40px;
+    text-align: center;
+}
+
+.projects .images {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+
+.projects .images img {
+    width: 400px;
+    height: 250px;
+    border-radius: 10px;
+}
+
+/* Email */
+
+.email {
+    padding-bottom: 120px;
+}
+
+.email h3 {
+    margin-top: 60px;
+    font-size: 30px;
+}
+
+.email .block {
+    background: #1c140f;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 40px 3%;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.email .block h4 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.email .block p {
+    width: 500px;
+}
+
+.email .block input {
+    background: wheat;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+    width: 380px;
+    font-family: "Popins", sans-serif;
+    font-weight: 400;
+    padding: 20px 30px;
+    position: relative;
+    right: -100px;
+    z-index: 1;
+    padding-right: 120px;
+}
+
+.email .block input::placeholder {
+    color: #898989;
+}
+
+.email .block button {
+    cursor: pointer;
+    border: none;
+    padding: 13px 17px;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+}
+
+/* страница про нас */
+
+.hero-about {
+    position: relative;
+    margin-top: 25px;
+}
+
+.hero-about .info {
+    width: 500px;
+    padding: 110px 0;
+}
+
+.hero-about .info h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+.hero-about .info .btn {
+    margin-top: 20px;
+}
+
+.hero-about img {
+    position: absolute;
+    right: -150px;
+    top: 0;
+}
+
+.swiper-title {
+    width: 100%;
+    text-align: center;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 34px;
+    margin-top: 10%;
+    font-weight: 600;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 10;
+}
+
+/* КАРУСЕЛЬ */
+.swiper-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.001),
+        rgba(238, 213, 75, 0.158)
+    );
+    min-height: 450px;
+    padding: 40px 0 60px 0;
+    z-index: 5;
+    position: relative;
+    margin-top: 55px;
+}
+.swiper-wrapper {
+    display: flex;
+    align-items: center;
+    height: 400px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+.swiper-slide {
+    position: absolute;
+    transition: all 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+    border-radius: 18px;
+    background: rgba(28, 20, 15, 0.92);
+    width: 370px;
+    min-height: 320px;
+    z-index: 0;
+    opacity: 0;
+    box-shadow: 0 8px 32px rgba(44, 31, 20, 0.3);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-1 {
+    left: 10%;
+    opacity: 0.2;
+    transform: scale(0.8) translateX(-50%);
+    z-index: 1;
+}
+.item-2 {
+    left: 30%;
+    opacity: 0.7;
+    transform: scale(0.92) translateX(-50%);
+    z-index: 2;
+}
+.item-3 {
+    left: 50%;
+    opacity: 1;
+    z-index: 3;
+    transform: scale(1.08) translateX(-50%);
+}
+.item-4 {
+    left: 70%;
+    opacity: 0.7;
+    transform: scale(0.92) translateX(-50%);
+    z-index: 2;
+}
+.item-5 {
+    left: 90%;
+    opacity: 0.2;
+    transform: scale(0.8) translateX(-50%);
+    z-index: 1;
+}
+
+.review-content {
+    width: 100%;
+    padding: 35px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+.review-content img {
+    width: 90px !important;
+    height: 90px !important;
+    border-radius: 50%;
+    margin-bottom: 18px;
+    border: 2px solid #fa9021;
+    object-fit: cover;
+    background: #311b09;
+}
+.review-author {
+    font-size: 19px;
+    color: #fa9021;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+.review-text {
+    color: #fff;
+    font-size: 17px;
+    text-align: center;
+    margin-bottom: 6px;
+    font-family: inherit;
+    line-height: 1.35;
+}
+
+.swiper-control {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 18px;
+    gap: 80px;
+    z-index: 11;
+    position: relative;
+}
+.swiper-control button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 23px;
+    color: #fa9021;
+    font-family: inherit;
+    position: relative;
+}
+.swiper-control-previous::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid #fa9021;
+    border-width: 0 3px 3px 0;
+    border-radius: 2px;
+    background: none;
+    top: 5px;
+    position: absolute;
+    transform: translateY(-20%);
+}
+.swiper-control-next::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: solid #fa9021;
+    border-width: 0 3px 3px 0;
+    border-radius: 2px;
+    background: none;
+    top: 9px;
+    position: absolute;
+    transform: translateY(-20%);
+}
+.swiper-control-previous::before {
+    left: -24px;
+    rotate: 135deg;
+}
+.swiper-control-next::before {
+    right: -24px;
+    rotate: -45deg;
+}
+
+/* страница контактов */
+
+.hero-contacts h1 {
+    text-align: center;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    font-size: 33px;
+}
+
+.hero-contacts p {
+    text-align: center;
+}
+
+.hero-contacts img {
+    width: 70%;
+    margin: 80px 15%;
+}
+
+.feedback {
+    padding: 70px 0;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(26, 14, 1, 1) 100%
+    );
+}
+
+.feedback h2 {
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: 30px;
+}
+
+.feedback p {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.feedback form {
+    margin: 80px auto;
+    width: 600px;
+}
+
+.feedback form .inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.feedback form .inline > div {
+    width: 50%;
+}
+
+.feedback form label {
+    color: #4f4f4f;
+    font-size: 14px;
+}
+
+.feedback form input,
+.feedback form textarea {
+    background: #2c2420;
+    border-radius: 10px;
+    border: 0.6px solid #cecece;
+    display: block;
+    width: 90%;
+    padding: 15px 10px;
+    outline: none;
+    color: #fff;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+
+.feedback form .one-line {
+    width: 95.5%;
+}
+
+.feedback form textarea {
+    resize: none;
+    height: 200px;
+}
+
+.feedback form button,
+.exit button {
+    background: #dc7000;
+    border-radius: 5px;
+    border: 0;
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    padding: 15px 35px;
+    transition: all 400ms ease;
+}
+
+.feedback form button:hover,
+.exit button:hover {
+    background: #680c09;
+}
+
+/* USER PROFILE */
+.exit {
+    float: right;
+    margin: 10px;
+}
+
+/* FOOTER */
+footer {
+    background: black;
+    padding: 50px 0;
+}
+
+footer .blocks {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .blocks p {
+    width: 300px;
+    margin: 15px 0;
+}
+
+footer .blocks h4 {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+footer .blocks ul {
+    list-style: none;
+}
+
+footer .blocks ul li {
+    margin-top: 7px;
+    opacity: 0.8;
+}
+
+footer hr {
+    margin: 30px 0;
+    border: 0;
+    height: 0.6px;
+    background: #888887;
+}
+
+footer > p {
+    text-align: center;
+}
+
+/* Обработчкий ошибок в регистрационной форме*/
+
+.error-message {
+    font-size: smaller;
+    color: rgb(228, 64, 64);
+}
+
+/* Куб */
+
+.loader {
+    position: absolute;
+    perspective: 800px;
+}
+
+.loader-cube {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    animation: rotate 4s infinite linear;
+}
+
+.loader-cube:before,
+.loader-cube:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+}
+
+.loader-cube:before {
+    transform: rotateX(90deg) translateZ(25px);
+}
+
+.loader-cube:after {
+    transform: rotateY(90deg) translateZ(25px);
+}
+
+.loader-cube .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(252, 248, 248);
+    opacity: 0.8;
+    border: 2px solid rgb(252, 250, 250);
+}
+
+.loader-cube .face:nth-child(1) {
+    transform: rotateY(0deg) translateZ(25px);
+    background-color: #c0c0c0;
+}
+
+.loader-cube .face:nth-child(2) {
+    transform: rotateX(90deg) translateZ(25px);
+    background-color: #f1f1f1;
+}
+
+.loader-cube .face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(25px);
+    background-color: #ffffff;
+}
+
+.loader-cube .face:nth-child(4) {
+    transform: rotateX(-90deg) translateZ(25px);
+    background-color: #ffffff;
+}
+
+.loader-cube .face:nth-child(5) {
+    transform: rotateY(90deg) translateZ(25px);
+    background-color: #ffffff;
+}
+
+.loader-cube .face:nth-child(6) {
+    transform: rotateY(0deg) translateZ(-25px);
+    background-color: #ffffff;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotateY(0deg) rotateX(0deg);
+    }
+    100% {
+        transform: rotateY(1turn) rotateX(1turn);
+    }
+}
