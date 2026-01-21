@@ -22,8 +22,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Auth::provider('ydb', function ($app, array $config) {
-            return new YdbUserProvider($app->make(UserRepository::class));
-        });
+        //
     }
 }
