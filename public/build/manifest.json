@@ -1,0 +1,22 @@
+{
+  "resources/css/style.css": {
+    "file": "assets/style-8NMzmAhg.css",
+    "src": "resources/css/style.css",
+    "isEntry": true,
+    "names": [
+      "style.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-Bj43h_rG.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/carousel.js": {
+    "file": "assets/carousel-GbEDBXrq.js",
+    "name": "carousel",
+    "src": "resources/js/carousel.js",
+    "isEntry": true
+  }
+}
