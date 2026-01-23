@@ -28,8 +28,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 
 # Установка зависимостей (composer перед копированием всего)
-COPY composer.json composer.lock ./
-RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+COPY composer.json composer.lock* ./
+RUN composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader --no-scripts
 
 # Копирование всего проекта
 COPY . .
@@ -38,10 +38,11 @@ COPY . .
 RUN chown -R www-data:www-data storage bootstrap/cache \
     && chmod -R 775 storage bootstrap/cache
 
-# Оптимизации Laravel (|| true для ошибок)
-RUN php artisan config:cache || true \
-    && php artisan route:cache || true \
-    && php artisan view:cache || true
+# Оптимизации Laravel (выполняются только если есть .env)
+# В production эти команды должны выполняться после настройки .env
+RUN php artisan config:clear || true \
+    && php artisan route:clear || true \
+    && php artisan view:clear || true
 
 EXPOSE 9000
 CMD ["php-fpm"]

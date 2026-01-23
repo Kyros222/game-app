@@ -2,9 +2,6 @@
 
 namespace App\Providers;
 
-use App\Auth\YdbUserProvider;
-use App\Services\Ydb\UserRepository;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
