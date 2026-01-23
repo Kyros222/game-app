@@ -13,7 +13,7 @@ RUN apk add --no-cache \
     icu-dev \
     mysql-client
 
-# PHP-расширения (исправлен --with-jpeg, убрал xpm, правильный configure)
+# PHP-расширения (исправлен with-jpeg, убрал xpm, правильный configure)
 RUN docker-php-ext-configure gd \
     --with-freetype \
     --with-jpeg \
